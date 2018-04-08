@@ -1,19 +1,37 @@
+<app-meu-form></app-meu-form>
+
 <section class="property-binding">
   <article>
-    <h2>Aula #09 Property Bind</h2>
-    <h3>Interpolation/ Interpolação</h3>
-    <p>String rendereizadad com interpolação: {{ url }}</p>
-    <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
-    <P>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</P>
-    <p>Curso Angular e gosto de curtir: {{ cursoAngular && getCurtirCurso() }}</p>
+    <h2>Aula #11 Event Bind</h2>
+    <h3>Event binding</h3>
+    <div>
+      <button (click)='botaoClicado()' class="btn btn-primary">
+        Me clique!
+      </button>
+    </div>
+    <br>
+    <br>
+
+    <input type="text"
+         (keyup)='onKeyUp($event)'
+         on-keyup.enter='salvarValor($event.target.value)'
+         (blur)='salvarValor(campoInput.value)'
+         #campoInput />
+
+    <p>Valor atual: {{ valorAtual }}</p>
+    <p>Valor salvo: {{ valorSalvo }}</p>
+
+    <br>
+    <span
+     (mouseover)='onMouseOverOut()'
+     (mouseout)='onMouseOverOut()'
+     [class.highlight]='isMouseOver'>
+     Passe o mouse sobre mim
+    </span>
   </article>
 
-  <article>
-    <h3>Property Binding</h3>
-    <img src="{{ urlImagem }}">
-    <img [src]="urlImagem">
-    <img bing-src="urlImagem">
-  </article>
+
+
 
   <article>
     <h2>Aula #10 Class e Style Bind</h2>
@@ -46,9 +64,24 @@
       Erro
     </div>
 
-    <div class="alert alert-danger" role="alert"
-      [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+    <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
       Esse texto somente aparecem em caso de erro.
     </div>
+  </article>
+
+  <article>
+    <h2>Aula #09 Property Bind</h2>
+    <h3>Interpolation/ Interpolação</h3>
+    <p>String rendereizadad com interpolação: {{ url }}</p>
+    <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+    <P>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</P>
+    <p>Curso Angular e gosto de curtir: {{ cursoAngular && getCurtirCurso() }}</p>
+  </article>
+
+  <article>
+    <h3>Property Binding</h3>
+    <img src="{{ urlImagem }}">
+    <img [src]="urlImagem">
+    <img bing-src="urlImagem">
   </article>
 </section>
