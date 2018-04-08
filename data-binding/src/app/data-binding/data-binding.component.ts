@@ -20,7 +20,8 @@ export class DataBindingComponent implements OnInit {
   urlImagem = 'http://lorempixel.com/400/200/sports';
   valorAtual = '';
   valorSalvo = '';
-  isMouseOver: boolean = false; 
+  isMouseOver: boolean = false;   
+  nomeDoCurso: string = 'Angular';
 
   getValor() {
     return 1;;
