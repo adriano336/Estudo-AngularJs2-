@@ -2,8 +2,10 @@
   <article>
     <h2>Aula #13</h2>
     <h3>Input/Output properties</h3>
-
     <app-curso [nome]="nomeDoCurso"></app-curso>
+    <contador [valor]="valorInicial"
+    (mudouValor)="onMudouValor($event)"></contador> 
+    <!-- Valor Fixo nao precisa usar o property-bind  -->
   </article>
 </section>
 
